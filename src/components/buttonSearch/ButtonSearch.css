@@ -1,0 +1,34 @@
+.container-input-search{
+    border: 1px solid var(--black-white);
+    border-radius: 61px;
+    height: 52px;
+    width: 542px;
+    justify-content: space-between;
+    padding-left: 2.5%;
+}
+
+.input-search{
+    font-size: 18px;
+    border: none;
+    flex: 1;
+    background: none;
+}
+
+.btn-search{
+    width: 86px;
+    padding: 2.5%;
+    background: var(--violet);
+    border-left: 1px solid var(--black-white);
+    border-radius: 0 61px 61px 0;
+}
+
+.btn-search:hover{
+    background: var(--green);
+    cursor: pointer;
+}
+
+.icon-search{
+    width: 100%;
+    height: 100%;
+    background: none;
+}

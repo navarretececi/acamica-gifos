@@ -1,23 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { listaGifs } from './data/data';
+import { Nav } from './components/nav/Nav';
+import { Result } from './components/result/Result';
+import { Header } from './components/header/Header';
 
 function App() {
+
+  const[searchState, setSearchState] = useState("")
+  const [newlistaGifs, setNewlistaGifs] = useState([])
+  const [theme, setTheme] = useState('light');
+  
+  const handlerSearchState =(e)=> {setSearchState(e.target.value)}
+  const handlerTheme = () => {
+     theme === "light" ? setTheme("dark") : setTheme("light")
+  }
+
+
+
+  useEffect (()=>{
+     const filterBySearch = (gif) => {return (searchState === [] ? [] : gif)} 
+
+     if(searchState) {
+       let filterlistaGifs = listaGifs.filter (gif =>{
+          return(
+            filterBySearch(gif)
+          )
+        })
+        setNewlistaGifs(filterlistaGifs)
+      }
+    
+  } ,[searchState])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div /* className="App center" */ className={`App ${theme} center`}>
+      <div className="principal-container">
+      <Header 
+        theme={theme}
+        handlerTheme={handlerTheme}
+      />
+      <Nav 
+        searchState={searchState}
+        handlerSearchState={handlerSearchState}
+      />
+      <Result 
+        newlistaGifs={newlistaGifs}
+      />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.btn{
+    border: 1px solid var(--violet-white);
+    background: var(--white-black);
+    box-sizing: border-box;
+    border-radius: 61px;
+    padding: 1% 2%;
+    font-weight: 700;
+}
+
+.btn:hover{
+    
+    cursor: pointer;
+    color: var(--green);
+}
