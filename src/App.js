@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { Nav } from './components/nav/Nav';
 import { Result } from './components/result/Result';
 import { Header } from './components/header/Header';
-import { Notification } from './components/notification/Notification';
-
+import { Loading } from './components/loading/Loading';
 
 function App() {
 
@@ -12,18 +11,20 @@ function App() {
   const [input, setInput] = useState("")
   const [newListaGifs, setNewListaGifs] = useState({})
   const [theme, setTheme] = useState('light');
-  
-  const handlerInput =(e)=> {setInput(e.target.value)}
+  const [serchedText, setSerchedText] = useState("")
+
+  console.log(`soy el text serched, ${serchedText}`)
+
+  const handlerInput =(e)=> {
+    setInput(e.target.value);
+  }
   const handlerTheme = () => {
      theme === "light" ? setTheme("dark") : setTheme("light")
   }
   const handlerSearch =()=>{
     setSearch(true);
+    setSerchedText(input)
   }
-
-  console.log(`soy el input ${input}`)
-  console.log(`soy el search ${search}`)
-  console.log(newListaGifs)
 
 useEffect (()=>{
   if(search){
@@ -51,12 +52,12 @@ useEffect (()=>{
         handlerInput={handlerInput}
         handlerSearch={handlerSearch}
       />
-      
       {
-        search ? <Notification notification={"Loading..."} /> :
-                                                                <Result 
-                                                                  newListaGifs={newListaGifs}
-                                                                />
+        search ? <Loading /> :
+                              <Result 
+                                newListaGifs={newListaGifs}
+                                serchedText={serchedText}
+                              />
      }
       </div>
     </div>

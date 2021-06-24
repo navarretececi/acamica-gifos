@@ -1,6 +1,7 @@
 .container-input-search{
     border: 1px solid var(--black-white);
     border-radius: 61px;
+    border-right: none;
     height: 52px;
     width: 542px;
     justify-content: space-between;
@@ -13,6 +14,8 @@
     flex: 1;
     background: none;
     color: var(--black-white);
+    outline: none;
+    padding-right: 3%;
 }
 
 .btn-search{
@@ -21,6 +24,10 @@
     background: var(--violet);
     border-left: 1px solid var(--black-white);
     border-radius: 0 61px 61px 0;
+    transform: translateX(0.5px);
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
 }
 
 .btn-search:hover{
