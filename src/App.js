@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Nav } from './components/nav/Nav';
 import { Result } from './components/result/Result';
 import { Header } from './components/header/Header';
+import { Notification } from './components/notification/Notification';
+
 
 function App() {
 
@@ -37,22 +39,8 @@ useEffect (()=>{
   }
 },[search])
 
-  /* useEffect (()=>{
-     const filterBySearch = (gif) => {return (searchState === [] ? [] : gif)} 
-
-     if(searchState) {
-       let filterlistaGifs = listaGifs.filter (gif =>{
-          return(
-            filterBySearch(gif)
-          )
-        })
-        setNewlistaGifs(filterlistaGifs)
-      }
-    
-  } ,[searchState]) */
-
   return (
-    <div /* className="App center" */ className={`App ${theme} center`}>
+    <div className={`App ${theme} center`}>
       <div className="principal-container">
       <Header 
         theme={theme}
@@ -63,9 +51,13 @@ useEffect (()=>{
         handlerInput={handlerInput}
         handlerSearch={handlerSearch}
       />
-      <Result 
-        newListaGifs={newListaGifs}
-      />
+      
+      {
+        search ? <Notification notification={"Loading..."} /> :
+                                                                <Result 
+                                                                  newListaGifs={newListaGifs}
+                                                                />
+     }
       </div>
     </div>
   );

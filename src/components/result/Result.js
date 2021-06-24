@@ -3,16 +3,12 @@ import { Card } from '../card/Card';
 import { Notification } from '../notification/Notification';
 
 export const Result =(props)=>{
-
-
-
     return(
         <section className="section center flex-column">
             <h3 className="violet-text secundary-title">
                 {Object.keys(props.newListaGifs).length > 0 ? "Resultados de la búsqueda" : null}
             </h3>
             <div className="cards-container flex-row">
-
                 {
                     Object.keys(props.newListaGifs).length > 0 ?
                         props.newListaGifs.pagination.count === 0 ?
@@ -28,10 +24,6 @@ export const Result =(props)=>{
                             }) 
                     : <Notification notification={"Por favor realizar una búsqueda"}/>
                 }
-                {
-                    
-                }
-
             </div>
         </section>
     )
