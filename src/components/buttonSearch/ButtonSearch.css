@@ -12,6 +12,7 @@
     border: none;
     flex: 1;
     background: none;
+    color: var(--black-white);
 }
 
 .btn-search{

@@ -8,8 +8,9 @@ export const Nav =(props)=>{
             <h1 className="principal-title violet-text">¡Inspirate y busca los mejores GIFS!</h1>
             <img className="center" src="./images/ilustra_header.svg" alt="people" />
             <ButtonSearch 
-                searchState={props.searchState}
-                handlerSearchState={props.handlerSearchState}
+                input={props.input}
+                handlerInput={props.handlerInput}
+                handlerSearch={props.handlerSearch}
             />
         </nav>
     )

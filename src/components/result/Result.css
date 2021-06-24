@@ -1,5 +1,5 @@
 .cards-container{
-    background: var(--grey);
+    background: var(--grey-black);
     width: 100%;
     justify-content: space-around;
     margin: 2% 0;

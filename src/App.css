@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
-/* :root{
-  --violet: #572EE5;
-  --green: rgb(79,227,193);
-  --grey: #E7E7E7;
-  --black: #121212;
-  --white:  white;
-} */
-
 .light{
   --violet: #572EE5;
   --violet-white: #572EE5;
   --green: rgb(79,227,193);
   --grey: #E7E7E7;
+  --grey-black: #E7E7E7;
   --black-white: #121212;
   --white-black:  white;
 }
@@ -23,6 +16,7 @@
   --violet-white: #FFFFFF;
   --green: rgb(79,227,193);
   --grey: #E7E7E7;
+  --grey-black: #212121;
   --black-white: #FFFFFF;
   --white-black: rgb(55,55,55);
 }
