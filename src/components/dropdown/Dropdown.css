@@ -1,0 +1,21 @@
+.autocomplete {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 505px;
+}
+
+.no-autocomplete{
+  border: none;
+}
+
+.autocomplete-items {
+  border: 1px solid var(--black-white);
+  z-index: 9999;
+  background: var(--white-black);
+}
+  
+.autocomplete-items:hover {
+  background: var(--grey); 
+  cursor: pointer;
+}

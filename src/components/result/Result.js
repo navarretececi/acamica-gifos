@@ -6,7 +6,7 @@ export const Result =(props)=>{
     return(
         <section className="section center flex-column">
             <h3 className="violet-text secundary-title">
-                {Object.keys(props.newListaGifs).length > 0 ? `Resultados de la búsqueda: ${props.serchedText}` : null}
+                {Object.keys(props.newListaGifs).length > 0 ? `Resultados de la búsqueda: ${props.searchedText}` : null}
             </h3>
             <div className="cards-container flex-row">
                 {

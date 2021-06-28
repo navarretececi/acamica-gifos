@@ -11,6 +11,8 @@ export const Nav =(props)=>{
                 input={props.input}
                 handlerInput={props.handlerInput}
                 handlerSearch={props.handlerSearch}
+                autocomplete={props.autocomplete}
+                setAutocomplete={props.setAutocomplete}
             />
         </nav>
     )
