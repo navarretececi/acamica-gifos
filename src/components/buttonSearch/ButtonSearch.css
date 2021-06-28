@@ -1,7 +1,14 @@
-.container-input-search{
+.search-close{
     border: 1px solid var(--black-white);
     border-radius: 61px;
     border-right: none;
+    width: 542px;
+    padding-left: 2.5%;
+}
+
+.search-open{
+    border: 1px solid var(--black-white);
+    border-radius: 25px;
     width: 542px;
     padding-left: 2.5%;
 }
@@ -22,7 +29,6 @@
 }
 
 .btn-search{
-    position: relative;
     width: 86px;
     padding: 2.5%;
     background: var(--violet);

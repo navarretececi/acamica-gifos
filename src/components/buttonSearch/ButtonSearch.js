@@ -11,7 +11,7 @@ export const ButtonSearch =(props)=>{
     }, [])
 
     return (
-            <div className="container-input-search flex-row">
+            <div className= {props.autocomplete.length > 0 ? "search-open flex-row" : "search-close flex-row"}>
                 <div className="container-searched">
                     <input 
                         id="searchbox"

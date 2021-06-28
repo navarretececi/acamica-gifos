@@ -1,8 +1,7 @@
 .autocomplete {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 505px;
+
 }
 
 .no-autocomplete{
@@ -10,7 +9,6 @@
 }
 
 .autocomplete-items {
-  border: 1px solid var(--black-white);
   z-index: 9999;
   background: var(--white-black);
 }
