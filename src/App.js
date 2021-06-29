@@ -26,7 +26,7 @@ function App() {
     setSearchedText(input)
   }
 
-useEffect ((input)=>{
+useEffect (()=>{
   if(search){
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=kIliylsUejr8imYFuIhiOJ0qCHqgYDD7&q=${input}&limit=12&offset=0&rating=g&lang=en
     `)
