@@ -17,6 +17,7 @@ function App() {
 
   const handlerInput =(e)=> {
     setInput(e.target.value);
+    // setAutocomplete(e.target.value);
   }
   const handlerTheme = () => {
      theme === "light" ? setTheme("dark") : setTheme("light")
