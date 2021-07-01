@@ -10,9 +10,12 @@ export const Nav =(props)=>{
             <ButtonSearch 
                 input={props.input}
                 handlerInput={props.handlerInput}
+                setInput={props.setInput}
                 handlerSearch={props.handlerSearch}
                 autocomplete={props.autocomplete}
                 setAutocomplete={props.setAutocomplete}
+                setSearchedText={props.setSearchedText}
+                setSearch={props.setSearch}
             />
         </nav>
     )

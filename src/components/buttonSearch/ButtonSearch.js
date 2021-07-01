@@ -23,14 +23,19 @@ export const ButtonSearch =(props)=>{
                         id="searchbox"
                         value={props.input} 
                         onChange={props.handlerInput} 
-                        onKeyPress={enterSearch}
-                        className="input-search" 
+                        onKeyDown={enterSearch}
+                        className="input-search first-input" 
                         type="search" 
                         placeholder="Busca gifs"
                     />
-                    <Dropdown autocomplete={props.autocomplete}/> 
+                    <Dropdown 
+                        autocomplete={props.autocomplete}
+                        setInput={props.setInput}
+                        setSearchedText={props.setSearchedText}
+                        setSearch={props.setSearch}
+                    /> 
                 </div>
-                <button className="btn-search" onClick={props.handlerSearch}>
+                <button className={props.autocomplete.length > 0 ? "btn-search btn-open" : "btn-search"} onClick={props.handlerSearch}>
                     <img className="center icon-search" src="./images/icon-search-mod-noc.svg" alt="icono" />
                 </button>
             </div>  

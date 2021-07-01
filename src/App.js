@@ -13,18 +13,16 @@ function App() {
   const [newListaGifs, setNewListaGifs] = useState({})
   const [theme, setTheme] = useState('light');
   const [searchedText, setSearchedText] = useState("")
-  console.log("autocomplete, ", autocomplete)
 
   const handlerInput =(e)=> {
     setInput(e.target.value);
-    // setAutocomplete(e.target.value);
   }
   const handlerTheme = () => {
      theme === "light" ? setTheme("dark") : setTheme("light")
   }
   const handlerSearch =()=>{
-    setSearch(true);
     setSearchedText(input)
+    setSearch(true);
   }
 
 useEffect (()=>{
@@ -40,10 +38,10 @@ useEffect (()=>{
     })
     .catch((error)=>console.log(error))
   }
-},[search])
+},[input, search])
 
 useEffect (()=>{
-  if(input){
+  if(input && !search){
     fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=kIliylsUejr8imYFuIhiOJ0qCHqgYDD7&q=${input}&limit=4&offset=0`)
     .then((response)=> response.json())
     .then((data)=> {
@@ -56,24 +54,27 @@ useEffect (()=>{
   return (
     <div className={`App ${theme} center`}>
       <div className="principal-container">
-      <Header 
-        theme={theme}
-        handlerTheme={handlerTheme}
-      />
-      <Nav 
-        input ={input}
-        handlerInput={handlerInput}
-        handlerSearch={handlerSearch}
-        autocomplete={autocomplete}
-        setAutocomplete={setAutocomplete}
-      />
-      {
-        search ? <Loading /> :
-                              <Result 
-                                newListaGifs={newListaGifs}
-                                searchedText={searchedText}
-                              />
-     }
+        <Header 
+          theme={theme}
+          handlerTheme={handlerTheme}
+        />
+        <Nav 
+          input ={input}
+          handlerInput={handlerInput}
+          setInput={setInput}
+          handlerSearch={handlerSearch}
+          autocomplete={autocomplete}
+          setAutocomplete={setAutocomplete}
+          setSearchedText={setSearchedText}
+          setSearch={setSearch}
+        />
+        {
+          search ? <Loading /> :
+                                <Result 
+                                  newListaGifs={newListaGifs}
+                                  searchedText={searchedText}
+                                />
+        }
       </div>
     </div>
   );

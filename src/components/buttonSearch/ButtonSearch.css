@@ -25,7 +25,18 @@
     background: none;
     color: var(--black-white);
     outline: none;
+    padding-right: 17.5%;
+    padding-left: 6%;
+    transform: translateX(-22px);
+    border-radius: 61px;
+}
+
+.first-input{
     padding-right: 3%;
+    padding-left: 1%;
+    transform: translateX(0px);
+    border-bottom: 1px solid var(--grey);
+    border-radius: 0;
 }
 
 .btn-search{
@@ -39,6 +50,10 @@
     border-top: 0;
     border-bottom: 0;
     height: 52px;
+}
+
+.btn-open{
+    border-radius: 0 23px 0px 0;
 }
 
 .btn-search:hover{

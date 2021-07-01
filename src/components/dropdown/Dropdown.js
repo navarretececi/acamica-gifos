@@ -9,7 +9,10 @@ export const Dropdown =(props)=>{
                     props.autocomplete.map((objeto, index)=>{
                     return <InputDropdown 
                             key={index} 
-                            autocomplete={objeto.name}
+                            name={objeto.name}
+                            setInput={props.setInput}
+                            setSearchedText={props.setSearchedText}
+                            setSearch={props.setSearch}
                             />}) : null
             }
         </div>
