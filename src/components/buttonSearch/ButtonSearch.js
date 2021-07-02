@@ -17,28 +17,28 @@ export const ButtonSearch =(props)=>{
     } 
 
     return (
-            <div className= {props.autocomplete.length > 0 ? "search-open flex-row" : "search-close flex-row"}>
-                <div className="container-searched">
-                    <input 
-                        id="searchbox"
-                        value={props.input} 
-                        onChange={props.handlerInput} 
-                        onKeyDown={enterSearch}
-                        className="input-search first-input" 
-                        type="search" 
-                        placeholder="Busca gifs"
-                    />
-                    <Dropdown 
-                        autocomplete={props.autocomplete}
-                        setInput={props.setInput}
-                        setSearchedText={props.setSearchedText}
-                        setSearch={props.setSearch}
-                    /> 
-                </div>
-                <button className={props.autocomplete.length > 0 ? "btn-search btn-open" : "btn-search"} onClick={props.handlerSearch}>
-                    <img className="center icon-search" src="./images/icon-search-mod-noc.svg" alt="icono" />
-                </button>
-            </div>  
+        <div className= {props.autocomplete.length > 0 ? "search-open flex-row" : "search-close flex-row"}>
+            <div className="container-searched">
+                <input 
+                    id="searchbox"
+                    value={props.input} 
+                    onChange={props.handlerInput} 
+                    onKeyDown={enterSearch}
+                    className="input-search first-input" 
+                    type="search" 
+                    placeholder="Busca gifs"
+                />
+                <Dropdown 
+                    autocomplete={props.autocomplete}
+                    setInput={props.setInput}
+                    setSearchedText={props.setSearchedText}
+                    setSearch={props.setSearch}
+                /> 
+            </div>
+            <button className={props.autocomplete.length > 0 ? "btn-search btn-open" : "btn-search"} onClick={props.handlerSearch}>
+                <img className="center icon-search" src="./images/icon-search-mod-noc.svg" alt="icono" />
+            </button>
+        </div>  
     )
 }
 

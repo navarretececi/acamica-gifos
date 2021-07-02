@@ -14,9 +14,8 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [searchedText, setSearchedText] = useState("")
 
-  const handlerInput =(e)=> {
-    setInput(e.target.value);
-  }
+  const handlerInput =(e)=> setInput(e.target.value);
+  
   const handlerTheme = () => {
      theme === "light" ? setTheme("dark") : setTheme("light")
   }
@@ -41,15 +40,13 @@ useEffect (()=>{
 },[input, search])
 
 useEffect (()=>{
-  if(input && !search){
+  if(input){
     fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=kIliylsUejr8imYFuIhiOJ0qCHqgYDD7&q=${input}&limit=4&offset=0`)
     .then((response)=> response.json())
-    .then((data)=> {
-      setAutocomplete(data.data)
-    })
+    .then((data)=> setAutocomplete(data.data))
     .catch((error)=>console.log(error))
   }
-},[input, search])
+},[input])
 
   return (
     <div className={`App ${theme} center`}>
