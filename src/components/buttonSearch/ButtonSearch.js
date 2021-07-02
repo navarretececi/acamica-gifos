@@ -8,7 +8,7 @@ export const ButtonSearch =(props)=>{
     useEffect(()=>{
         const cleanInput =()=> props.setAutocomplete([])
         document.getElementById("searchbox").addEventListener("search", cleanInput);
-    }, [])
+    }, [props])
     
     const enterSearch =(e)=> {
         if(e.keyCode === 13 || e.which === 13){

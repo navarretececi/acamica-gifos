@@ -14,6 +14,7 @@ export const InputDropdown =(props)=>{
             className={props.name.length > 0 ? "autocomplete-items input-search" : "no-autocomplete"} 
             value={props.name}
             onClick={handlerUpdateInput}
+            onChange={() => {}}
             type="text" 
         />
     )

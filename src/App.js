@@ -49,7 +49,7 @@ useEffect (()=>{
     })
     .catch((error)=>console.log(error))
   }
-},[input])
+},[input, search])
 
   return (
     <div className={`App ${theme} center`}>
