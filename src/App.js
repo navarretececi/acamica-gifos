@@ -1,24 +1,26 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav } from './components/nav/Nav';
 import { Result } from './components/result/Result';
 import { Header } from './components/header/Header';
 import { Loading } from './components/loading/Loading';
+import { AppContext } from "./context/ThemeContext";
+
 
 function App() {
+
+  const { theme } = React.useContext(AppContext);
+
 
   const [search, setSearch] = useState(false)
   const [input, setInput] = useState("")
   const [autocomplete, setAutocomplete] = useState ([])
   const [newListaGifs, setNewListaGifs] = useState({})
-  const [theme, setTheme] = useState('light');
   const [searchedText, setSearchedText] = useState("")
 
   const handlerInput =(e)=> setInput(e.target.value);
   
-  const handlerTheme = () => {
-     theme === "light" ? setTheme("dark") : setTheme("light")
-  }
+  
   const handlerSearch =()=>{
     setSearchedText(input)
     setSearch(true);
@@ -51,10 +53,7 @@ useEffect (()=>{
   return (
     <div className={`App ${theme} center`}>
       <div className="principal-container">
-        <Header 
-          theme={theme}
-          handlerTheme={handlerTheme}
-        />
+        <Header />
         <Nav 
           input ={input}
           handlerInput={handlerInput}

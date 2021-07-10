@@ -1,10 +1,15 @@
+import React from 'react'
 import './Button.css';
+import { AppContext } from "../../context/ThemeContext";
 
-export const Button =(props)=>{
+
+export const Button =()=>{
+    const { theme, handlerTheme } = React.useContext(AppContext);
+
     return(
         <>
-            <button className="btn violet-text" value={props.theme} onClick={props.handlerTheme}>
-                MODO {props.theme==="light" ? "DARK" : "LIGHT"}
+            <button className="btn violet-text" value={theme} onClick={handlerTheme}>
+                MODO {theme==="light" ? "DARK" : "LIGHT"}
             </button>
         </>
     )
