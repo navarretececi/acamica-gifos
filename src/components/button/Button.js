@@ -1,10 +1,10 @@
 import React from 'react'
 import './Button.css';
-import { AppContext } from "../../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 
 export const Button =()=>{
-    const { theme, handlerTheme } = React.useContext(AppContext);
+    const { theme, handlerTheme } = React.useContext(ThemeContext);
 
     return(
         <>

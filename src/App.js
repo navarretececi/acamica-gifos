@@ -4,27 +4,18 @@ import { Nav } from './components/nav/Nav';
 import { Result } from './components/result/Result';
 import { Header } from './components/header/Header';
 import { Loading } from './components/loading/Loading';
-import { AppContext } from "./context/ThemeContext";
+import { ThemeContext } from "./context/ThemeContext";
+import { AppContext } from "./context/AppContext";
+
 
 
 function App() {
 
-  const { theme } = React.useContext(AppContext);
+  const { theme } = React.useContext(ThemeContext);
+  const { input, setInput, search, setSearch, setNewListaGifs } = React.useContext(AppContext);
 
-
-  const [search, setSearch] = useState(false)
-  const [input, setInput] = useState("")
+  
   const [autocomplete, setAutocomplete] = useState ([])
-  const [newListaGifs, setNewListaGifs] = useState({})
-  const [searchedText, setSearchedText] = useState("")
-
-  const handlerInput =(e)=> setInput(e.target.value);
-  
-  
-  const handlerSearch =()=>{
-    setSearchedText(input)
-    setSearch(true);
-  }
 
 useEffect (()=>{
   if(search){
@@ -55,21 +46,11 @@ useEffect (()=>{
       <div className="principal-container">
         <Header />
         <Nav 
-          input ={input}
-          handlerInput={handlerInput}
-          setInput={setInput}
-          handlerSearch={handlerSearch}
           autocomplete={autocomplete}
           setAutocomplete={setAutocomplete}
-          setSearchedText={setSearchedText}
-          setSearch={setSearch}
         />
         {
-          search ? <Loading /> :
-                                <Result 
-                                  newListaGifs={newListaGifs}
-                                  searchedText={searchedText}
-                                />
+          search ? <Loading /> : <Result />
         }
       </div>
     </div>

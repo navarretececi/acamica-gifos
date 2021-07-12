@@ -10,9 +10,6 @@ export const Dropdown =(props)=>{
                     return <InputDropdown 
                             key={index} 
                             name={objeto.name}
-                            setInput={props.setInput}
-                            setSearchedText={props.setSearchedText}
-                            setSearch={props.setSearch}
                             />}) : null
             }
         </div>

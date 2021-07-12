@@ -5,10 +5,20 @@ export const AppContext = React.createContext();
 
 export const AppProvider =({ children })=> {
   
-  const [state, setState] = useState("");
+  const [input, setInput] = useState("")
+  const [search, setSearch] = useState(false)
+  const [searchedText, setSearchedText] = useState("")
+
+  const [newListaGifs, setNewListaGifs] = useState({})
+
+  const handlerInput =(e)=> setInput(e.target.value);
+  const handlerSearch =()=>{
+    setSearchedText(input)
+    setSearch(true);
+  }
 
   return (
-    <AppContext.Provider value={{ state, setState }}>
+    <AppContext.Provider value={{ input, setInput, handlerInput, search, setSearch, handlerSearch,searchedText, setSearchedText, newListaGifs, setNewListaGifs }}>
       {children}
     </AppContext.Provider>
   );

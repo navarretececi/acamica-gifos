@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
-export const AppContext = React.createContext();
+export const ThemeContext = React.createContext();
 
 export const ThemeProvider =({ children })=> {
   
@@ -12,8 +12,8 @@ export const ThemeProvider =({ children })=> {
      }
 
   return (
-    <AppContext.Provider value={{ theme, handlerTheme }}>
+    <ThemeContext.Provider value={{ theme, handlerTheme }}>
       {children}
-    </AppContext.Provider>
+    </ThemeContext.Provider>
   );
 }

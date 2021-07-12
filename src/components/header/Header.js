@@ -1,11 +1,11 @@
 import React from 'react'
 import './Header.css';
 import { Button } from '../button/Button';
-import { AppContext } from "../../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 
 export const Header =()=>{
-    const { theme } = React.useContext(AppContext);
+    const { theme } = React.useContext(ThemeContext);
 
     return(
         <header className="header flex-row">

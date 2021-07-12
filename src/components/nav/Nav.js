@@ -8,14 +8,8 @@ export const Nav =(props)=>{
             <h1 className="principal-title violet-text">¡Inspirate y busca los mejores GIFS!</h1>
             <img className="center" src="./images/ilustra_header.svg" alt="people" />
             <ButtonSearch 
-                input={props.input}
-                handlerInput={props.handlerInput}
-                setInput={props.setInput}
-                handlerSearch={props.handlerSearch}
                 autocomplete={props.autocomplete}
                 setAutocomplete={props.setAutocomplete}
-                setSearchedText={props.setSearchedText}
-                setSearch={props.setSearch}
             />
         </nav>
     )
