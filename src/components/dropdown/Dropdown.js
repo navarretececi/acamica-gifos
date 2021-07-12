@@ -1,12 +1,16 @@
+import React from 'react'
 import './Dropdown.css';
 import { InputDropdown } from './InputDropdown';
+import { AppContext } from '../../context/AppContext'; 
 
-export const Dropdown =(props)=>{
+export const Dropdown =()=>{
+    const { autocomplete } = React.useContext(AppContext);
+
     return(
         <div className="autocomplete">
             {
-                props.autocomplete.length > 0 ?
-                    props.autocomplete.map((objeto, index)=>{
+                autocomplete.length > 0 ?
+                    autocomplete.map((objeto, index)=>{
                     return <InputDropdown 
                             key={index} 
                             name={objeto.name}

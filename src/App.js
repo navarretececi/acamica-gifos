@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Nav } from './components/nav/Nav';
 import { Result } from './components/result/Result';
 import { Header } from './components/header/Header';
@@ -7,15 +7,10 @@ import { Loading } from './components/loading/Loading';
 import { ThemeContext } from "./context/ThemeContext";
 import { AppContext } from "./context/AppContext";
 
-
-
 function App() {
 
   const { theme } = React.useContext(ThemeContext);
-  const { input, setInput, search, setSearch, setNewListaGifs } = React.useContext(AppContext);
-
-  
-  const [autocomplete, setAutocomplete] = useState ([])
+  const { input, setInput, setAutocomplete, search, setSearch, setNewListaGifs } = React.useContext(AppContext);
 
 useEffect (()=>{
   if(search){
@@ -30,7 +25,7 @@ useEffect (()=>{
     })
     .catch((error)=>console.log(error))
   }
-},[input, search])
+},[input, setInput, search, setSearch, setAutocomplete, setNewListaGifs])
 
 useEffect (()=>{
   if(input){
@@ -39,16 +34,13 @@ useEffect (()=>{
     .then((data)=> setAutocomplete(data.data))
     .catch((error)=>console.log(error))
   }
-},[input])
+},[input, setAutocomplete])
 
   return (
     <div className={`App ${theme} center`}>
       <div className="principal-container">
         <Header />
-        <Nav 
-          autocomplete={autocomplete}
-          setAutocomplete={setAutocomplete}
-        />
+        <Nav />
         {
           search ? <Loading /> : <Result />
         }

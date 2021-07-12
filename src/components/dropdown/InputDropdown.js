@@ -5,7 +5,6 @@ import { AppContext } from '../../context/AppContext';
 export const InputDropdown =(props)=>{
     const { setInput, setSearch, setSearchedText } = React.useContext(AppContext);
 
-
     const handlerUpdateInput =(e)=>{
         setInput(props.name)
         setSearchedText(props.name)

@@ -6,9 +6,9 @@ export const AppContext = React.createContext();
 export const AppProvider =({ children })=> {
   
   const [input, setInput] = useState("")
+  const [autocomplete, setAutocomplete] = useState ([])
   const [search, setSearch] = useState(false)
   const [searchedText, setSearchedText] = useState("")
-
   const [newListaGifs, setNewListaGifs] = useState({})
 
   const handlerInput =(e)=> setInput(e.target.value);
@@ -18,7 +18,7 @@ export const AppProvider =({ children })=> {
   }
 
   return (
-    <AppContext.Provider value={{ input, setInput, handlerInput, search, setSearch, handlerSearch,searchedText, setSearchedText, newListaGifs, setNewListaGifs }}>
+    <AppContext.Provider value={{ input, setInput, handlerInput, autocomplete, setAutocomplete, search, setSearch, handlerSearch,searchedText, setSearchedText, newListaGifs, setNewListaGifs }}>
       {children}
     </AppContext.Provider>
   );

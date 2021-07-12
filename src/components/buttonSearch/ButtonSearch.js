@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 
 
-export const ButtonSearch =(props)=>{
-    const { input, handlerInput, handlerSearch } = React.useContext(AppContext);
+export const ButtonSearch =()=>{
+    const { input, handlerInput, autocomplete, setAutocomplete, handlerSearch } = React.useContext(AppContext);
 
     useEffect(()=>{
-        const cleanInput =()=> props.setAutocomplete([])
+        const cleanInput =()=> setAutocomplete([])
         document.getElementById("searchbox").addEventListener("search", cleanInput);
-    }, [props])
+    }, [setAutocomplete])
     
     const enterSearch =(e)=> {
         if(e.keyCode === 13 || e.which === 13){
@@ -20,7 +20,7 @@ export const ButtonSearch =(props)=>{
     } 
 
     return (
-        <div className= {props.autocomplete.length > 0 ? "search-open flex-row" : "search-close flex-row"}>
+        <div className= {autocomplete.length > 0 ? "search-open flex-row" : "search-close flex-row"}>
             <div className="container-searched">
                 <input 
                     id="searchbox"
@@ -31,11 +31,9 @@ export const ButtonSearch =(props)=>{
                     type="search" 
                     placeholder="Busca gifs"
                 />
-                <Dropdown 
-                    autocomplete={props.autocomplete}
-                /> 
+                <Dropdown /> 
             </div>
-            <button className={props.autocomplete.length > 0 ? "btn-search btn-open" : "btn-search"} onClick={handlerSearch}>
+            <button className={autocomplete.length > 0 ? "btn-search btn-open" : "btn-search"} onClick={handlerSearch}>
                 <img className="center icon-search" src="./images/icon-search-mod-noc.svg" alt="icono" />
             </button>
         </div>  
