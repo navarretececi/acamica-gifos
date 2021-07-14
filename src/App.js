@@ -25,7 +25,7 @@ useEffect (()=>{
     })
     .catch((error)=>console.log(error))
   }
-},[input, setInput, search, setSearch, setAutocomplete, setNewListaGifs])
+},[search])
 
 useEffect (()=>{
   if(input){
