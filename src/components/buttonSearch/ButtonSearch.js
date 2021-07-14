@@ -24,6 +24,7 @@ export const ButtonSearch =()=>{
             <div className="container-searched">
                 <input 
                     id="searchbox"
+                    autocomplete="off" 
                     value={input} 
                     onChange={handlerInput} 
                     onKeyDown={enterSearch}
