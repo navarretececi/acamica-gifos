@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/acamica-gifos/static/css/main.e4484dd6.chunk.css",
+    "main.js": "/acamica-gifos/static/js/main.49f44c68.chunk.js",
+    "main.js.map": "/acamica-gifos/static/js/main.49f44c68.chunk.js.map",
+    "runtime-main.js": "/acamica-gifos/static/js/runtime-main.2ba10836.js",
+    "runtime-main.js.map": "/acamica-gifos/static/js/runtime-main.2ba10836.js.map",
+    "static/js/2.c781fe3a.chunk.js": "/acamica-gifos/static/js/2.c781fe3a.chunk.js",
+    "static/js/2.c781fe3a.chunk.js.map": "/acamica-gifos/static/js/2.c781fe3a.chunk.js.map",
+    "static/js/3.186438e0.chunk.js": "/acamica-gifos/static/js/3.186438e0.chunk.js",
+    "static/js/3.186438e0.chunk.js.map": "/acamica-gifos/static/js/3.186438e0.chunk.js.map",
+    "index.html": "/acamica-gifos/index.html",
+    "static/css/main.e4484dd6.chunk.css.map": "/acamica-gifos/static/css/main.e4484dd6.chunk.css.map",
+    "static/js/2.c781fe3a.chunk.js.LICENSE.txt": "/acamica-gifos/static/js/2.c781fe3a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ba10836.js",
+    "static/js/2.c781fe3a.chunk.js",
+    "static/css/main.e4484dd6.chunk.css",
+    "static/js/main.49f44c68.chunk.js"
+  ]
+}
