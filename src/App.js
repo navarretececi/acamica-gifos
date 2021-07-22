@@ -7,14 +7,15 @@ import { Loading } from './components/loading/Loading';
 import { ThemeContext } from "./context/ThemeContext";
 import { AppContext } from "./context/AppContext";
 
-function App() {
+const KEY = process.env.REACT_APP_GIFOS_KEY
 
+function App() {
   const { theme } = React.useContext(ThemeContext);
   const { input, setInput, setAutocomplete, search, setSearch, setNewListaGifs } = React.useContext(AppContext);
 
 useEffect (()=>{
   if(search){
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=kIliylsUejr8imYFuIhiOJ0qCHqgYDD7&q=${input}&limit=12&offset=0&rating=g&lang=en
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${KEY}&q=${input}&limit=12&offset=0&rating=g&lang=en
     `)
     .then((response)=> response.json())
     .then((data)=> {
@@ -29,7 +30,7 @@ useEffect (()=>{
 
 useEffect (()=>{
   if(input){
-    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=kIliylsUejr8imYFuIhiOJ0qCHqgYDD7&q=${input}&limit=4&offset=0`)
+    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${KEY}&q=${input}&limit=4&offset=0`)
     .then((response)=> response.json())
     .then((data)=> setAutocomplete(data.data))
     .catch((error)=>console.log(error))
